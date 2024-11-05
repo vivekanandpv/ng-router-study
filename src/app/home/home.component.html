@@ -1,0 +1,7 @@
+<h3 class="my-4">Home Component</h3>
+
+<h4 class="my-4">Current Score: {{ dataService.score$ | async }}</h4>
+
+<button class="btn btn-primary" (click)="dataService.incrementScore()">
+  Increment Score
+</button>
