@@ -1,11 +1,13 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { authGuard } from './auth.guard';
+import { warnUnsavedGuard } from './warn-unsaved.guard';
 
 export const routes: Routes = [
   {
     path: 'home',
     title: 'HOME',
+    canDeactivate: [warnUnsavedGuard],
     component: HomeComponent,
   },
   {
@@ -28,6 +30,7 @@ export const routes: Routes = [
       import('./customers/customers.component').then(
         (c) => c.CustomersComponent
       ),
+
     children: [
       {
         path: ':id',

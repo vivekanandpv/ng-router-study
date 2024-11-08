@@ -1,7 +1,8 @@
 import { AsyncPipe, JsonPipe } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Savable } from '../models/savable.model';
 
 @Component({
   selector: 'app-customers',

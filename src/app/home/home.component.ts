@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { DataService } from '../data.service';
 import { AsyncPipe } from '@angular/common';
 
@@ -11,4 +11,14 @@ import { AsyncPipe } from '@angular/common';
 })
 export class HomeComponent {
   dataService = inject(DataService);
+
+  saved = signal(false);
+
+  isSaved() {
+    return this.saved();
+  }
+
+  save() {
+    this.saved.update((_) => true);
+  }
 }
